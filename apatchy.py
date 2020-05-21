@@ -9,17 +9,17 @@ PATH_2 = sys.argv[2]
 raw_input = input
 
 print("would you like to use experimental pre-patches for speeding up the process and possibly more stability? (this is recommended on cellular devices)")
-yon = raw_input("y/n? ")
+exp_pre = raw_input("y/n? ")
 print("would you like to enable debug output?")
-dyon = raw_input("y/n? ")
-if yon[0] == "y" or yon[0] == "Y":
-    yon = True
+debug = raw_input("y/n? ")
+if exp_pre[0] == "y" or exp_pre[0] == "Y":
+    exp_pre = True
 else:
-    yon = False
-if dyon[0] == "y" or dyon[0] == "Y":
-    dyon = True
+    exp_pre = False
+if debug[0] == "y" or debug[0] == "Y":
+    debug = True
 else:
-    dyon = False
+    debug = False
 
 
 def prepatch(PATH):
@@ -35,15 +35,20 @@ def prepatch(PATH):
 
 
 
-if yon:
+if exp_pre:
     prepatch(PATH_1)
     prepatch(PATH_2)
 
-os.mkdir("enjb")
-os.mkdir("dajb")
+try:
+	os.mkdir("enjb")
+	os.mkdir("dajb")
+except FileExistsError:
+	pass
+except:
+	print("error")
 
 
-libapatchy.patch2d(PATH_1, PATH_2, "dajb", "enjb")
+libapatchy.patch(PATH_1, PATH_2, "dajb", "enjb")
 
 os.system("cd enjb/ && tar -cf enjb.tar * && mv enjb.tar ..")
 os.system("cd dajb/ && tar -cf dajb.tar * && mv dajb.tar ..")
