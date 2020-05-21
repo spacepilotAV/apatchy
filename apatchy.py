@@ -6,7 +6,8 @@ import libapatchy
 PATH_1 = sys.argv[1]
 PATH_2 = sys.argv[2]
 
-raw_input = input
+if sys.version_info[0] == 3:
+	raw_input = input
 
 print("would you like to use experimental pre-patches for speeding up the process and possibly more stability? (this is recommended on cellular devices)")
 exp_pre = raw_input("y/n? ")
