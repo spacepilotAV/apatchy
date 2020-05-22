@@ -10,17 +10,17 @@ if sys.version_info[0] == 3:
 	raw_input = input
 
 print("would you like to use experimental pre-patches for speeding up the process and possibly more stability? (this is recommended on cellular devices)")
-exp_pre = raw_input("y/n? ")
+willUsePrePatches = raw_input("y/n? ")
 print("would you like to enable debug output?")
-debug = raw_input("y/n? ")
-if exp_pre[0] == "y" or exp_pre[0] == "Y":
-    exp_pre = True
+debugOutput = raw_input("y/n? ")
+if willUsePrePatches[0] == "y" or willUsePrePatches[0] == "Y":
+    willUsePrePatches = True
 else:
-    exp_pre = False
-if debug[0] == "y" or debug[0] == "Y":
-    debug = True
+    willUsePrePatches = False
+if debugOutput[0] == "y" or debugOutput[0] == "Y":
+    debugOutput = True
 else:
-    debug = False
+    debugOutput = False
 
 
 def prepatch(PATH):
@@ -36,7 +36,7 @@ def prepatch(PATH):
 
 
 
-if exp_pre:
+if willUsePrePatches:
     prepatch(PATH_1)
     prepatch(PATH_2)
 
