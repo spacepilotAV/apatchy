@@ -10,5 +10,5 @@ lightspeed automatic directory patchfinder
 # TODO!!!
 * rewrite the code less fucking disgustingly
 * be less of an asshole
-* get unbanned from discord.gg/jb ;)
+* get unbanned from discord.gg/jb
 * ensure function on aarch64 (will test on 12.4.6 & 12.4.7)
