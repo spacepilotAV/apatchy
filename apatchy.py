@@ -1,4 +1,7 @@
 #!/usr/bin/python
+# apatchy frontend
+# (c) spv 2020
+# gpl v2
 
 import sys, os
 import libapatchy
