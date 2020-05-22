@@ -1,5 +1,6 @@
 # libapatchy
 # light speed directory patchfinder
+# this needs to be cleaned up
 import os, sys
 
 def patch(dir1, dir2, out1, out2):
