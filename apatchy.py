@@ -52,7 +52,7 @@ except:
 	print("error")
 
 
-libapatchy.patch(PATH_1, PATH_2, "dajb", "enjb")
+libapatchy.patch(PATH_1, PATH_2, "dajb/", "enjb/")
 
 os.system("cd enjb/ && tar -cf enjb.tar * && mv enjb.tar ..")
 os.system("cd dajb/ && tar -cf dajb.tar * && mv dajb.tar ..")
