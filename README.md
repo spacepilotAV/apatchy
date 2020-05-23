@@ -12,3 +12,7 @@ lightspeed automatic directory patchfinder
 * be less of an asshole
 * get unbanned from discord.gg/jb
 * ensure function on aarch64 (will test on 12.4.6 & 12.4.7)
+
+# NOTES!
+
+* this appears to no longer be necessary thx to my discovery (@spacepilotAV). gist.github.com will be happy ;)
