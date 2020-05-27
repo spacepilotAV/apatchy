@@ -1,5 +1,6 @@
 # apatchy
-lightspeed automatic directory patchfinder
+~~lightspeed automatic directory patchfinder~~
+***HACK FOR DIFF THAT MAKES 2 SEPERATE FOLDERS WITH DIFFERENCES***
 
 <details>
   <summary>memez</summary>
@@ -15,4 +16,4 @@ lightspeed automatic directory patchfinder
 
 # NOTES!
 
-* this appears to no longer be necessary thx to my discovery (@spacepilotAV). gist.github.com will be happy ;)
+* this is for learning purposes!!! YOU DON'T NEED THIS for [wenetaunthreader](https://www.github.com/w212security/wenetaunthreader)!
