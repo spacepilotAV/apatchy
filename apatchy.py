@@ -8,23 +8,15 @@ import libapatchy
 
 PATH_1 = sys.argv[1]
 PATH_2 = sys.argv[2]
+OUT_1  = sys.argv[3]
+OUT_2  = sys.argv[4]
 
 if sys.version_info[0] == 3:
 	raw_input = input
 
-print("would you like to use experimental pre-patches for speeding up the process and possibly more stability? (this is recommended on cellular devices)")
-willUsePrePatches = raw_input("y/n? ")
-print("would you like to enable debug output?")
-debugOutput = raw_input("y/n? ")
-if willUsePrePatches[0] == "y" or willUsePrePatches[0] == "Y":
-    willUsePrePatches = True
-else:
-    willUsePrePatches = False
-if debugOutput[0] == "y" or debugOutput[0] == "Y":
-    debugOutput = True
-else:
-    debugOutput = False
-
+willUsePrePatches	= "--pre" in sys.argv
+debugOutput		= "--debug" in sys.argv
+makeTarPatches		= "--tar" in sys.argv
 
 def prepatch(PATH):
     os.system("rm -rf " + PATH + "/Spotlight")
@@ -44,15 +36,16 @@ if willUsePrePatches:
     prepatch(PATH_2)
 
 try:
-	os.mkdir("enjb")
-	os.mkdir("dajb")
+	os.mkdir(OUT_2)
+	os.mkdir(OUT_1)
 except FileExistsError:
 	pass
 except:
 	print("error")
 
 
-libapatchy.patch(PATH_1, PATH_2, "dajb/", "enjb/")
+libapatchy.patch(PATH_1, PATH_2, OUT_1, OUT_2)
 
-os.system("cd enjb/ && tar -cf enjb.tar * && mv enjb.tar ..")
-os.system("cd dajb/ && tar -cf dajb.tar * && mv dajb.tar ..")
+if makeTarPatches:
+	os.system("cd " + OUT_2 + "/ && tar -cf " + OUT_2 + ".tar * && mv " + OUT_2 + ".tar ..")
+	os.system("cd " + OUT_1 + "/ && tar -cf " + OUT_1 + ".tar * && mv " + OUT_1 + ".tar ..")
