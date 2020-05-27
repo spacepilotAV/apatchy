@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# apatchy frontend
+# libapatchy frontend
 # (c) spv 2020
 # gpl v2
 
